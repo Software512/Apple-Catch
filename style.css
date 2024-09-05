@@ -1,0 +1,102 @@
+#start {
+    width: 75%;
+    padding: 2%;
+    color: black;
+    border-radius: 0%;
+    font-family: inherit;
+}
+
+#infoButton {
+    width: 75%;
+    margin-top: 2%;
+    padding: 2%;
+    color: black;
+    border-radius: 0%;
+    font-family: inherit;
+}
+
+#closeInfo {
+    width: 75%;
+    margin-top: 2%;
+    padding: 2%;
+    color: black;
+    border-radius: 0%;
+    font-family: inherit;
+}
+
+#game {
+    text-align: center;
+    font-family: 'Press Start 2P', monospace;
+    position: fixed;
+    margin: 0;
+    border-color: gray;
+    border-style: solid;
+}
+
+#title1, #title2 {
+    margin-top: 0;
+}
+
+#basket {
+    width: 10%;
+    height: 13.3333333333%;
+    position: absolute;
+    top: 75%;
+    left: 45%;
+    background-image: url(assets/basket.webp);
+    background-size: 100%;
+}
+
+#basket:hover {
+    cursor: grab;
+}
+
+#score {
+    position: absolute;
+    margin: 0;
+    top: 5%;
+    right: 5%;
+    color: white;
+    z-index: 1;
+}
+
+#apple1, #apple2, #apple3, #apple4 {
+    position: absolute;
+    width: 5%;
+    height: 6.66666666667%;
+    background-size: 100%;
+    z-index: 0;
+}
+
+#startScreen {
+    position: relative;
+    top: 20%;
+    background-color: whitesmoke;
+    width: fit-content;
+    margin: auto;
+    padding: 5%;
+}
+
+#background {
+    position: absolute;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    left: 0%;
+    background-image: url(assets/background.webp);
+    background-size: cover;
+}
+
+button {
+    cursor: pointer;
+}
+
+#infoWindow {
+    position: relative;
+    bottom: 15%;
+    background-color: whitesmoke;
+    width: 50%;
+    margin: auto;
+    padding: 5%;
+    visibility: hidden;
+}

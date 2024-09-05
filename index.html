@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Apple Catch</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="assets/favicon.ico">
+        <link rel="apple-touch-icon" href="assets/ios-icon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <noscript><meta http-equiv="refresh" content="0;url=noscript.html"></noscript>
+    </head>
+    <body onclick=""> <!-- The onclick property is here to stop mobile devices from zooming in when you double-tap. -->
+        <div id="game">
+        <div id="background">
+        <div id="startScreen">
+            <h1 id="title1">Apple Catch</h1>
+            <button id="start" onclick="startGame()">Play</button>
+            <button id="infoButton" onclick="instructions()">How To Play</button>
+        </div>
+        <div id="infoWindow">
+            <h1 id="title2" style="visibility: hidden;">How to Play</h1>
+            <p id="info" style="visibility: hidden;">Catch the ripe apples to get points. You lose if you let a ripe apple touch the ground or catch a rotten apple.</p>
+            <button id="closeInfo" onclick="instructions()" style="visibility: hidden;">Close</button>
+        </div>
+        <p id="score" style="visibility: hidden;">HI 0000 | 0000</p>
+        <div id="basket" style="visibility: hidden;"></div>
+        <div id="apple1" style="visibility: hidden;"></div>
+        <div id="apple2" style="visibility: hidden;"></div>
+        <div id="apple3" style="visibility: hidden;"></div>
+        <div id="apple4" style="visibility: hidden;"></div>
+        </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
