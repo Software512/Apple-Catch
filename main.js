@@ -196,7 +196,7 @@ function instructions() {
 
 function GameLoop() {
     time++;
-    if (performance.now() > lastTick + 12.5 && isSlow == false) {
+    if (performance.now() > lastTick + 14 && isSlow == false) {
         console.log("Game running slow. Reducing framerate.");
         isSlow = true;
         speed = {
