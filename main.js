@@ -108,7 +108,7 @@ function startGame() {
     spawnTime = Math.random() * speed.spawnRandom + speed.spawnBase + time;
     lastTick = performance.now();
     isSlow = false;
-    tickTimer = setInterval(GameLoop, speed.tick);
+    GameLoop();
 }
 
 document.addEventListener("selectionstart", () => { document.getSelection().removeAllRanges(); });
@@ -154,7 +154,7 @@ function updateScore() {
 }
 
 function gameOver() {
-    clearInterval(tickTimer);
+    clearTimeout(tickTimer);
     started = false;
     apple1.used = false;
     apple2.used = false;
@@ -206,8 +206,6 @@ function GameLoop() {
             spawnRandom: speed.spawnRandom / 2,
             tick: speed.tick * 2
         };
-        clearInterval(tickTimer);
-        tickTimer = setInterval(GameLoop, speed.tick);
     }
     lastTick = performance.now();
     if (spawnTime <= time) {
@@ -309,72 +307,49 @@ function GameLoop() {
         apple1Pos = [0, 0];
         apple1.used = false;
         document.getElementById("apple1").style.visibility = "hidden";
-        if (!apple1.rotten) {
-            updateScore();
-        } else {
-            gameOver();
-        }
+        if (!apple1.rotten) updateScore(); else gameOver();
     }
     if (basketPos < apple2Pos[0] + (20 / 3) && basketPos + (40 / 3) > apple2Pos[0] && 75 < apple2Pos[1] + (20 / 3) && 75 + (40 / 3) > apple2Pos[1]) {
         apple2Pos = [0, 0];
         apple2.used = false;
         document.getElementById("apple2").style.visibility = "hidden";
-        if (!apple2.rotten) {
-            updateScore();
-        } else {
-            gameOver();
-        }
+        if (!apple2.rotten) updateScore(); else gameOver();
     }
     if (basketPos < apple3Pos[0] + (20 / 3) && basketPos + (40 / 3) > apple3Pos[0] && 75 < apple3Pos[1] + (20 / 3) && 75 + (40 / 3) > apple3Pos[1]) {
         apple3Pos = [0, 0];
         apple3.used = false;
         document.getElementById("apple3").style.visibility = "hidden";
-        if (!apple3.rotten) {
-            updateScore();
-        } else {
-            gameOver();
-        }
+        if (!apple3.rotten) updateScore(); else gameOver();
     }
     if (basketPos < apple4Pos[0] + (20 / 3) && basketPos + (40 / 3) > apple4Pos[0] && 75 < apple4Pos[1] + (20 / 3) && 75 + (40 / 3) > apple4Pos[1]) {
         apple4Pos = [0, 0];
         apple4.used = false;
         document.getElementById("apple4").style.visibility = "hidden";
-        if (!apple4.rotten) {
-            updateScore();
-        } else {
-            gameOver();
-        }
+        if (!apple4.rotten) updateScore(); else gameOver();
     }
     if (apple1Pos[1] >= 100 - (20 / 3)) {
         apple1Pos = [0, 0];
         apple1.used = false;
         document.getElementById("apple1").style.visibility = "hidden";
-        if (!apple1.rotten) {
-            gameOver();
-        }
+        if (!apple1.rotten) gameOver();
     }
     if (apple2Pos[1] >= 100 - (20 / 3)) {
         apple2Pos = [0, 0];
         apple2.used = false;
         document.getElementById("apple2").style.visibility = "hidden";
-        if (!apple2.rotten) {
-            gameOver();
-        }
+        if (!apple2.rotten) gameOver();
     }
     if (apple3Pos[1] >= 100 - (20 / 3)) {
         apple3Pos = [0, 0];
         apple3.used = false;
         document.getElementById("apple3").style.visibility = "hidden";
-        if (!apple3.rotten) {
-            gameOver();
-        }
+        if (!apple3.rotten) gameOver();
     }
     if (apple4Pos[1] >= 100 - (20 / 3)) {
         apple3Pos = [0, 0];
         apple3.used = false;
         document.getElementById("apple4").style.visibility = "hidden";
-        if (!apple4.rotten) {
-            gameOver();
-        }
+        if (!apple4.rotten) gameOver();
     }
+    if (started) tickTimer = setTimeout(GameLoop, speed.tick);
 }
