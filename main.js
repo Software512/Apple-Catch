@@ -116,7 +116,7 @@ document.addEventListener("selectionstart", () => { document.getSelection().remo
 function updateScore() {
     score++
     if (score % 20 == 0) {
-        speed = { apple: speed.apple / 0.95, basket: speed.basket / 0.95, spawnBase: speed.spawnBase * 0.95, spawnRandom: speed.spawnRandom * 0.95 }
+        speed = { apple: speed.apple / 0.95, basket: speed.basket / 0.95, spawnBase: speed.spawnBase * 0.95, spawnRandom: speed.spawnRandom * 0.95, tick: speed.tick }
     }
     if (score > highscore) {
         highscore = score;
